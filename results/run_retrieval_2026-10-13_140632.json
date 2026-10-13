@@ -1,0 +1,1158 @@
+{
+  "mode": "retrieval",
+  "model": null,
+  "run_timestamp": "2026-10-13T18:06:32.037502+00:00",
+  "metrics": {
+    "k": 3,
+    "questions": 33,
+    "answerable": 27,
+    "unanswerable": 6,
+    "retrieval_recall_at_k": {
+      "count": 26,
+      "total": 27,
+      "rate": 0.963
+    },
+    "retrieval_mrr": 0.963,
+    "retrieval_recall_at_k_direct": {
+      "count": 18,
+      "total": 18,
+      "rate": 1.0
+    },
+    "retrieval_recall_at_k_paraphrased": {
+      "count": 8,
+      "total": 9,
+      "rate": 0.889
+    },
+    "retrieval_latency_ms": {
+      "mean": 0.018,
+      "p50": 0.017,
+      "p95": 0.028,
+      "max": 0.032
+    },
+    "context_reduction": {
+      "mean_context_words": 112.4,
+      "full_handbook_words": 1239,
+      "reduction": 0.909,
+      "note": "measured in words, not model tokens"
+    }
+  },
+  "records": [
+    {
+      "id": "Q01",
+      "question": "How quickly must a P1 bug be fixed?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "bug-severity",
+      "key_facts": [
+        [
+          "4 hours",
+          "four hours"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "bug-severity#1",
+          "doc_id": "bug-severity",
+          "score": 7.055
+        },
+        {
+          "chunk_id": "release-process#3",
+          "doc_id": "release-process",
+          "score": 5.081
+        },
+        {
+          "chunk_id": "test-strategy#3",
+          "doc_id": "test-strategy",
+          "score": 4.191
+        }
+      ],
+      "retrieval_ms": 0.032334006391465664,
+      "context_words": 136,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q02",
+      "question": "What mix of unit, integration and end-to-end tests does the team aim for?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "test-strategy",
+      "key_facts": [
+        [
+          "70"
+        ],
+        [
+          "20"
+        ],
+        [
+          "10"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 15.558
+        },
+        {
+          "chunk_id": "ci-pipeline#1",
+          "doc_id": "ci-pipeline",
+          "score": 12.483
+        },
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 10.137
+        }
+      ],
+      "retrieval_ms": 0.02762500662356615,
+      "context_words": 125,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q03",
+      "question": "When does a flaky test get quarantined?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "flaky-tests",
+      "key_facts": [
+        [
+          "3 ",
+          "three"
+        ],
+        [
+          "10 runs",
+          "ten runs",
+          "last 10",
+          "last ten"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "flaky-tests#2",
+          "doc_id": "flaky-tests",
+          "score": 6.235
+        },
+        {
+          "chunk_id": "flaky-tests#3",
+          "doc_id": "flaky-tests",
+          "score": 4.762
+        },
+        {
+          "chunk_id": "flaky-tests#1",
+          "doc_id": "flaky-tests",
+          "score": 3.411
+        }
+      ],
+      "retrieval_ms": 0.018874998204410076,
+      "context_words": 124,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q04",
+      "question": "How many times may CI automatically retry a failed test?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "flaky-tests",
+      "key_facts": [
+        [
+          "2",
+          "two"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "flaky-tests#3",
+          "doc_id": "flaky-tests",
+          "score": 17.907
+        },
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 3.674
+        },
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 2.671
+        }
+      ],
+      "retrieval_ms": 0.024541004677303135,
+      "context_words": 116,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q05",
+      "question": "What time does the nightly end-to-end suite run?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "ci-pipeline",
+      "key_facts": [
+        [
+          "2 am",
+          "2 a.m.",
+          "2:00"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 14.223
+        },
+        {
+          "chunk_id": "ci-pipeline#1",
+          "doc_id": "ci-pipeline",
+          "score": 8.478
+        },
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 7.556
+        }
+      ],
+      "retrieval_ms": 0.019540995708666742,
+      "context_words": 125,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q06",
+      "question": "What is the maximum duration allowed for the unit test stage?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "ci-pipeline",
+      "key_facts": [
+        [
+          "10 minutes",
+          "ten minutes"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "ci-pipeline#1",
+          "doc_id": "ci-pipeline",
+          "score": 7.353
+        },
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 4.58
+        },
+        {
+          "chunk_id": "flaky-tests#3",
+          "doc_id": "flaky-tests",
+          "score": 3.647
+        }
+      ],
+      "retrieval_ms": 0.020042003598064184,
+      "context_words": 112,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q07",
+      "question": "Which tool does the team use for load testing?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "performance-testing",
+      "key_facts": [
+        [
+          "k6"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "performance-testing#1",
+          "doc_id": "performance-testing",
+          "score": 8.407
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.138
+        },
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 3.736
+        }
+      ],
+      "retrieval_ms": 0.014957986422814429,
+      "context_words": 116,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q08",
+      "question": "What p95 latency must the API stay under with 500 concurrent users?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "performance-testing",
+      "key_facts": [
+        [
+          "300"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 21.689
+        },
+        {
+          "chunk_id": "code-review-qa#2",
+          "doc_id": "code-review-qa",
+          "score": 4.822
+        },
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 3.362
+        }
+      ],
+      "retrieval_ms": 0.02329100971110165,
+      "context_words": 118,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q09",
+      "question": "How often does Northwind ship a release?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "second tuesday",
+          "every other tuesday",
+          "every two weeks",
+          "biweekly"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 7.716
+        },
+        {
+          "chunk_id": "release-process#2",
+          "doc_id": "release-process",
+          "score": 2.552
+        },
+        {
+          "chunk_id": "test-strategy#3",
+          "doc_id": "test-strategy",
+          "score": 2.552
+        }
+      ],
+      "retrieval_ms": 0.013083001249469817,
+      "context_words": 109,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q10",
+      "question": "When does code freeze start before a release?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "monday"
+        ],
+        [
+          "5 pm",
+          "5:00 pm",
+          "5 p.m.",
+          "17:00"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 12.612
+        },
+        {
+          "chunk_id": "test-strategy#3",
+          "doc_id": "test-strategy",
+          "score": 4.416
+        },
+        {
+          "chunk_id": "release-process#2",
+          "doc_id": "release-process",
+          "score": 4.245
+        }
+      ],
+      "retrieval_ms": 0.01662501017563045,
+      "context_words": 109,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q11",
+      "question": "How many tests are in the regression suite?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "240"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "release-process#2",
+          "doc_id": "release-process",
+          "score": 5.862
+        },
+        {
+          "chunk_id": "metrics#2",
+          "doc_id": "metrics",
+          "score": 5.178
+        },
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 2.556
+        }
+      ],
+      "retrieval_ms": 0.01750000228639692,
+      "context_words": 106,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q12",
+      "question": "How long does the on-call engineer have to acknowledge a page?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "oncall",
+      "key_facts": [
+        [
+          "15 minutes",
+          "fifteen minutes"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "oncall#2",
+          "doc_id": "oncall",
+          "score": 5.432
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 3.774
+        },
+        {
+          "chunk_id": "oncall#1",
+          "doc_id": "oncall",
+          "score": 3.599
+        }
+      ],
+      "retrieval_ms": 0.016416001017205417,
+      "context_words": 115,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q13",
+      "question": "What colour contrast ratio does the accessibility standard require for text?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "accessibility",
+      "key_facts": [
+        [
+          "4.5"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "accessibility#1",
+          "doc_id": "accessibility",
+          "score": 19.125
+        },
+        {
+          "chunk_id": "accessibility#2",
+          "doc_id": "accessibility",
+          "score": 2.813
+        },
+        {
+          "chunk_id": "automation-standards#3",
+          "doc_id": "automation-standards",
+          "score": 2.26
+        }
+      ],
+      "retrieval_ms": 0.016375008272007108,
+      "context_words": 84,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q14",
+      "question": "Which screen readers are used for manual accessibility testing?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "accessibility",
+      "key_facts": [
+        [
+          "voiceover"
+        ],
+        [
+          "nvda"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "accessibility#2",
+          "doc_id": "accessibility",
+          "score": 14.687
+        },
+        {
+          "chunk_id": "accessibility#1",
+          "doc_id": "accessibility",
+          "score": 4.765
+        },
+        {
+          "chunk_id": "security-testing#2",
+          "doc_id": "security-testing",
+          "score": 2.432
+        }
+      ],
+      "retrieval_ms": 0.014500008546747267,
+      "context_words": 90,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q15",
+      "question": "What is the target for defect escape rate?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "metrics",
+      "key_facts": [
+        [
+          "5%",
+          "5 percent",
+          "under 5",
+          "below 5"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "metrics#2",
+          "doc_id": "metrics",
+          "score": 13.309
+        },
+        {
+          "chunk_id": "metrics#1",
+          "doc_id": "metrics",
+          "score": 8.688
+        },
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 3.984
+        }
+      ],
+      "retrieval_ms": 0.012667005648836493,
+      "context_words": 108,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q16",
+      "question": "What prefix do test accounts use?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "test-data",
+      "key_facts": [
+        [
+          "qa_"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 11.182
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.824
+        },
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 0.737
+        }
+      ],
+      "retrieval_ms": 0.01645900192670524,
+      "context_words": 126,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q17",
+      "question": "How soon must critical security findings be fixed?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "security-testing",
+      "key_facts": [
+        [
+          "7 days",
+          "seven days"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "security-testing#2",
+          "doc_id": "security-testing",
+          "score": 13.811
+        },
+        {
+          "chunk_id": "bug-severity#1",
+          "doc_id": "bug-severity",
+          "score": 3.567
+        },
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 3.362
+        }
+      ],
+      "retrieval_ms": 0.018583989003673196,
+      "context_words": 131,
+      "full_context_words": 1239
+    },
+    {
+      "id": "Q18",
+      "question": "How big should a pull request be at most?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "code-review-qa",
+      "key_facts": [
+        [
+          "400"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "code-review-qa#1",
+          "doc_id": "code-review-qa",
+          "score": 7.748
+        },
+        {
+          "chunk_id": "code-review-qa#2",
+          "doc_id": "code-review-qa",
+          "score": 4.733
+        },
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 4.502
+        }
+      ],
+      "retrieval_ms": 0.01233299553859979,
+      "context_words": 104,
+      "full_context_words": 1239
+    },
+    {
+      "id": "P01",
+      "question": "If I am the one carrying the pager this week, how soon do I have to respond?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "oncall",
+      "key_facts": [
+        [
+          "15 minutes",
+          "fifteen minutes"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "oncall#1",
+          "doc_id": "oncall",
+          "score": 10.078
+        },
+        {
+          "chunk_id": "onboarding#1",
+          "doc_id": "onboarding",
+          "score": 5.129
+        },
+        {
+          "chunk_id": "code-review-qa#2",
+          "doc_id": "code-review-qa",
+          "score": 5.084
+        }
+      ],
+      "retrieval_ms": 0.020750012481585145,
+      "context_words": 110,
+      "full_context_words": 1239
+    },
+    {
+      "id": "P02",
+      "question": "What is the cut-off for getting code merged ahead of a launch?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "monday"
+        ],
+        [
+          "5 pm",
+          "5:00 pm",
+          "5 p.m.",
+          "17:00"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 4.536
+        },
+        {
+          "chunk_id": "release-process#2",
+          "doc_id": "release-process",
+          "score": 4.533
+        },
+        {
+          "chunk_id": "ci-pipeline#3",
+          "doc_id": "ci-pipeline",
+          "score": 2.813
+        }
+      ],
+      "retrieval_ms": 0.015375000657513738,
+      "context_words": 98,
+      "full_context_words": 1239
+    },
+    {
+      "id": "P03",
+      "question": "What happens to a test that sometimes passes and sometimes fails for no clear reason?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "flaky-tests",
+      "key_facts": [
+        [
+          "quarantine"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "flaky-tests#1",
+          "doc_id": "flaky-tests",
+          "score": 8.594
+        },
+        {
+          "chunk_id": "test-strategy#3",
+          "doc_id": "test-strategy",
+          "score": 2.863
+        },
+        {
+          "chunk_id": "ci-pipeline#3",
+          "doc_id": "ci-pipeline",
+          "score": 2.813
+        }
+      ],
+      "retrieval_ms": 0.02345800749026239,
+      "context_words": 114,
+      "full_context_words": 1239
+    },
+    {
+      "id": "P04",
+      "question": "Who has to give the go-ahead before we ship?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "qa lead"
+        ],
+        [
+          "product owner"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 4.887
+        },
+        {
+          "chunk_id": "performance-testing#1",
+          "doc_id": "performance-testing",
+          "score": 1.883
+        },
+        {
+          "chunk_id": "accessibility#2",
+          "doc_id": "accessibility",
+          "score": 1.783
+        }
+      ],
+      "retrieval_ms": 0.014000004739500582,
+      "context_words": 95,
+      "full_context_words": 1239
+    },
+    {
+      "id": "P05",
+      "question": "Are we allowed to use real customer records in the testing environment?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "test-data",
+      "key_facts": [
+        [
+          "never",
+          "must not",
+          "not allowed",
+          "may not",
+          "cannot",
+          "no"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 4.822
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.138
+        },
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 3.221
+        }
+      ],
+      "retrieval_ms": 0.018167003872804344,
+      "context_words": 125,
+      "full_context_words": 1239
+    },
+    {
+      "id": "P06",
+      "question": "How many days do we have to fix a severe vulnerability?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "security-testing",
+      "key_facts": [
+        [
+          "7 days",
+          "seven days"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 3.09
+        },
+        {
+          "chunk_id": "onboarding#2",
+          "doc_id": "onboarding",
+          "score": 2.528
+        },
+        {
+          "chunk_id": "onboarding#1",
+          "doc_id": "onboarding",
+          "score": 2.396
+        }
+      ],
+      "retrieval_ms": 0.014165998436510563,
+      "context_words": 119,
+      "full_context_words": 1239
+    },
+    {
+      "id": "P07",
+      "question": "What do we use to automate tests in the browser?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "automation-standards",
+      "key_facts": [
+        [
+          "playwright"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.824
+        },
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 3.346
+        },
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 0.737
+        }
+      ],
+      "retrieval_ms": 0.01666699245106429,
+      "context_words": 126,
+      "full_context_words": 1239
+    },
+    {
+      "id": "P08",
+      "question": "If something serious breaks right after launch, how long do we have to decide whether to undo it?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "30 minutes",
+          "thirty minutes"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "release-process#3",
+          "doc_id": "release-process",
+          "score": 10.707
+        },
+        {
+          "chunk_id": "performance-testing#1",
+          "doc_id": "performance-testing",
+          "score": 2.302
+        },
+        {
+          "chunk_id": "ci-pipeline#3",
+          "doc_id": "ci-pipeline",
+          "score": 2.18
+        }
+      ],
+      "retrieval_ms": 0.02270800177939236,
+      "context_words": 91,
+      "full_context_words": 1239
+    },
+    {
+      "id": "P09",
+      "question": "Which guideline do we follow so that people with disabilities can use the product?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "accessibility",
+      "key_facts": [
+        [
+          "wcag"
+        ]
+      ],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 4.822
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.138
+        },
+        {
+          "chunk_id": "automation-standards#2",
+          "doc_id": "automation-standards",
+          "score": 3.194
+        }
+      ],
+      "retrieval_ms": 0.01662501017563045,
+      "context_words": 107,
+      "full_context_words": 1239
+    },
+    {
+      "id": "U01",
+      "question": "What is the salary range for a QA engineer at Northwind?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 3.131
+        },
+        {
+          "chunk_id": "onboarding#1",
+          "doc_id": "onboarding",
+          "score": 2.762
+        },
+        {
+          "chunk_id": "accessibility#1",
+          "doc_id": "accessibility",
+          "score": 2.54
+        }
+      ],
+      "retrieval_ms": 0.017125013982877135,
+      "context_words": 102,
+      "full_context_words": 1239
+    },
+    {
+      "id": "U02",
+      "question": "Which cloud provider hosts the staging environment?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 4.059
+        },
+        {
+          "chunk_id": "ci-pipeline#1",
+          "doc_id": "ci-pipeline",
+          "score": 2.813
+        },
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 2.105
+        }
+      ],
+      "retrieval_ms": 0.012541990145109594,
+      "context_words": 115,
+      "full_context_words": 1239
+    },
+    {
+      "id": "U03",
+      "question": "What is the company's remote work policy?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "ci-pipeline#3",
+          "doc_id": "ci-pipeline",
+          "score": 3.364
+        },
+        {
+          "chunk_id": "flaky-tests#1",
+          "doc_id": "flaky-tests",
+          "score": 2.251
+        },
+        {
+          "chunk_id": "flaky-tests#3",
+          "doc_id": "flaky-tests",
+          "score": 2.215
+        }
+      ],
+      "retrieval_ms": 0.011042007827199996,
+      "context_words": 109,
+      "full_context_words": 1239
+    },
+    {
+      "id": "U04",
+      "question": "Does the team run tests on a Selenium Grid?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 3.574
+        },
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 3.499
+        },
+        {
+          "chunk_id": "metrics#1",
+          "doc_id": "metrics",
+          "score": 2.578
+        }
+      ],
+      "retrieval_ms": 0.018709004507400095,
+      "context_words": 114,
+      "full_context_words": 1239
+    },
+    {
+      "id": "U05",
+      "question": "How many QA engineers are on the team?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "release-process#3",
+          "doc_id": "release-process",
+          "score": 4.25
+        },
+        {
+          "chunk_id": "metrics#1",
+          "doc_id": "metrics",
+          "score": 3.363
+        },
+        {
+          "chunk_id": "onboarding#1",
+          "doc_id": "onboarding",
+          "score": 2.762
+        }
+      ],
+      "retrieval_ms": 0.015792000340297818,
+      "context_words": 108,
+      "full_context_words": 1239
+    },
+    {
+      "id": "U06",
+      "question": "What is the budget for the annual penetration test?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": null,
+      "retrieved": [
+        {
+          "chunk_id": "security-testing#2",
+          "doc_id": "security-testing",
+          "score": 3.633
+        },
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 0.737
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 0.686
+        }
+      ],
+      "retrieval_ms": 0.015458004781976342,
+      "context_words": 122,
+      "full_context_words": 1239
+    }
+  ]
+}

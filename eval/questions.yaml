@@ -1,0 +1,208 @@
+# Evaluation questions for the Northwind QA Handbook (data/docs/).
+#
+# answerable: true  -> the handbook contains the answer.
+#   gold_doc   : the document that holds the answer (used for retrieval recall and citation checks)
+#   key_facts  : facts the answer must contain. Each entry is a list of acceptable
+#                alternatives; the answer needs at least one alternative from EVERY entry.
+# answerable: false -> the handbook does NOT contain the answer. A good system says so
+#                instead of guessing.
+
+# ---------------------------------------------------------------- answerable
+- id: Q01
+  question: "How quickly must a P1 bug be fixed?"
+  answerable: true
+  gold_doc: bug-severity
+  key_facts: [["4 hours", "four hours"]]
+
+- id: Q02
+  question: "What mix of unit, integration and end-to-end tests does the team aim for?"
+  answerable: true
+  gold_doc: test-strategy
+  key_facts: [["70"], ["20"], ["10"]]
+
+- id: Q03
+  question: "When does a flaky test get quarantined?"
+  answerable: true
+  gold_doc: flaky-tests
+  key_facts: [["3 ", "three"], ["10 runs", "ten runs", "last 10", "last ten"]]
+
+- id: Q04
+  question: "How many times may CI automatically retry a failed test?"
+  answerable: true
+  gold_doc: flaky-tests
+  key_facts: [["2", "two"]]
+
+- id: Q05
+  question: "What time does the nightly end-to-end suite run?"
+  answerable: true
+  gold_doc: ci-pipeline
+  key_facts: [["2 am", "2 a.m.", "2:00"]]
+
+- id: Q06
+  question: "What is the maximum duration allowed for the unit test stage?"
+  answerable: true
+  gold_doc: ci-pipeline
+  key_facts: [["10 minutes", "ten minutes"]]
+
+- id: Q07
+  question: "Which tool does the team use for load testing?"
+  answerable: true
+  gold_doc: performance-testing
+  key_facts: [["k6"]]
+
+- id: Q08
+  question: "What p95 latency must the API stay under with 500 concurrent users?"
+  answerable: true
+  gold_doc: performance-testing
+  key_facts: [["300"]]
+
+- id: Q09
+  question: "How often does Northwind ship a release?"
+  answerable: true
+  gold_doc: release-process
+  key_facts: [["second tuesday", "every other tuesday", "every two weeks", "biweekly"]]
+
+- id: Q10
+  question: "When does code freeze start before a release?"
+  answerable: true
+  gold_doc: release-process
+  key_facts: [["monday"], ["5 pm", "5:00 pm", "5 p.m.", "17:00"]]
+
+- id: Q11
+  question: "How many tests are in the regression suite?"
+  answerable: true
+  gold_doc: release-process
+  key_facts: [["240"]]
+
+- id: Q12
+  question: "How long does the on-call engineer have to acknowledge a page?"
+  answerable: true
+  gold_doc: oncall
+  key_facts: [["15 minutes", "fifteen minutes"]]
+
+- id: Q13
+  question: "What colour contrast ratio does the accessibility standard require for text?"
+  answerable: true
+  gold_doc: accessibility
+  key_facts: [["4.5"]]
+
+- id: Q14
+  question: "Which screen readers are used for manual accessibility testing?"
+  answerable: true
+  gold_doc: accessibility
+  key_facts: [["voiceover"], ["nvda"]]
+
+- id: Q15
+  question: "What is the target for defect escape rate?"
+  answerable: true
+  gold_doc: metrics
+  key_facts: [["5%", "5 percent", "under 5", "below 5"]]
+
+- id: Q16
+  question: "What prefix do test accounts use?"
+  answerable: true
+  gold_doc: test-data
+  key_facts: [["qa_"]]
+
+- id: Q17
+  question: "How soon must critical security findings be fixed?"
+  answerable: true
+  gold_doc: security-testing
+  key_facts: [["7 days", "seven days"]]
+
+- id: Q18
+  question: "How big should a pull request be at most?"
+  answerable: true
+  gold_doc: code-review-qa
+  key_facts: [["400"]]
+
+# ------------------------------------------- answerable, worded differently
+# These questions deliberately avoid the handbook's own wording, so keyword matching
+# has a harder time. They test whether retrieval still finds the right document.
+- id: P01
+  style: paraphrased
+  question: "If I am the one carrying the pager this week, how soon do I have to respond?"
+  answerable: true
+  gold_doc: oncall
+  key_facts: [["15 minutes", "fifteen minutes"]]
+
+- id: P02
+  style: paraphrased
+  question: "What is the cut-off for getting code merged ahead of a launch?"
+  answerable: true
+  gold_doc: release-process
+  key_facts: [["monday"], ["5 pm", "5:00 pm", "5 p.m.", "17:00"]]
+
+- id: P03
+  style: paraphrased
+  question: "What happens to a test that sometimes passes and sometimes fails for no clear reason?"
+  answerable: true
+  gold_doc: flaky-tests
+  key_facts: [["quarantine"]]
+
+- id: P04
+  style: paraphrased
+  question: "Who has to give the go-ahead before we ship?"
+  answerable: true
+  gold_doc: release-process
+  key_facts: [["qa lead"], ["product owner"]]
+
+- id: P05
+  style: paraphrased
+  question: "Are we allowed to use real customer records in the testing environment?"
+  answerable: true
+  gold_doc: test-data
+  key_facts: [["never", "must not", "not allowed", "may not", "cannot", "no"]]
+
+- id: P06
+  style: paraphrased
+  question: "How many days do we have to fix a severe vulnerability?"
+  answerable: true
+  gold_doc: security-testing
+  key_facts: [["7 days", "seven days"]]
+
+- id: P07
+  style: paraphrased
+  question: "What do we use to automate tests in the browser?"
+  answerable: true
+  gold_doc: automation-standards
+  key_facts: [["playwright"]]
+
+- id: P08
+  style: paraphrased
+  question: "If something serious breaks right after launch, how long do we have to decide whether to undo it?"
+  answerable: true
+  gold_doc: release-process
+  key_facts: [["30 minutes", "thirty minutes"]]
+
+- id: P09
+  style: paraphrased
+  question: "Which guideline do we follow so that people with disabilities can use the product?"
+  answerable: true
+  gold_doc: accessibility
+  key_facts: [["wcag"]]
+
+# ------------------------------------------------------------- not answerable
+- id: U01
+  question: "What is the salary range for a QA engineer at Northwind?"
+  answerable: false
+
+- id: U02
+  question: "Which cloud provider hosts the staging environment?"
+  answerable: false
+
+- id: U03
+  question: "What is the company's remote work policy?"
+  answerable: false
+
+- id: U04
+  question: "Does the team run tests on a Selenium Grid?"
+  answerable: false
+
+- id: U05
+  question: "How many QA engineers are on the team?"
+  answerable: false
+
+- id: U06
+  question: "What is the budget for the annual penetration test?"
+  answerable: false

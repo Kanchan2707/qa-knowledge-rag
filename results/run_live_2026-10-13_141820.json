@@ -1,0 +1,1797 @@
+{
+  "mode": "live",
+  "model": "claude-sonnet-4-6",
+  "run_timestamp": "2026-10-13T18:18:20.546790+00:00",
+  "metrics": {
+    "k": 3,
+    "questions": 33,
+    "answerable": 27,
+    "unanswerable": 6,
+    "retrieval_recall_at_k": {
+      "count": 26,
+      "total": 27,
+      "rate": 0.963
+    },
+    "retrieval_mrr": 0.963,
+    "retrieval_recall_at_k_direct": {
+      "count": 18,
+      "total": 18,
+      "rate": 1.0
+    },
+    "retrieval_recall_at_k_paraphrased": {
+      "count": 8,
+      "total": 9,
+      "rate": 0.889
+    },
+    "retrieval_latency_ms": {
+      "mean": 0.235,
+      "p50": 0.237,
+      "p95": 0.326,
+      "max": 0.368
+    },
+    "context_reduction": {
+      "mean_context_words": 112.4,
+      "full_handbook_words": 1239,
+      "reduction": 0.909,
+      "note": "measured in words, not model tokens"
+    },
+    "generation_errors": 0,
+    "answer_parse_errors": 0,
+    "answer_correctness": {
+      "count": 21,
+      "total": 27,
+      "rate": 0.778
+    },
+    "false_abstain_rate": {
+      "count": 4,
+      "total": 27,
+      "rate": 0.148
+    },
+    "abstention_accuracy": {
+      "count": 6,
+      "total": 6,
+      "rate": 1.0
+    },
+    "citation_accuracy": {
+      "count": 23,
+      "total": 23,
+      "rate": 1.0
+    },
+    "faithfulness_rate": {
+      "count": 32,
+      "total": 33,
+      "rate": 0.97
+    },
+    "faithfulness_avg_score": 4.91,
+    "tokens": {
+      "input": 21722,
+      "output": 2933
+    }
+  },
+  "records": [
+    {
+      "id": "Q01",
+      "question": "How quickly must a P1 bug be fixed?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "bug-severity",
+      "key_facts": [
+        [
+          "4 hours",
+          "four hours"
+        ]
+      ],
+      "answer": "A P1 bug must be fixed within 4 hours.",
+      "retrieved": [
+        {
+          "chunk_id": "bug-severity#1",
+          "doc_id": "bug-severity",
+          "score": 7.055
+        },
+        {
+          "chunk_id": "release-process#3",
+          "doc_id": "release-process",
+          "score": 5.081
+        },
+        {
+          "chunk_id": "test-strategy#3",
+          "doc_id": "test-strategy",
+          "score": 4.191
+        }
+      ],
+      "retrieval_ms": 0.036666999221779406,
+      "context_words": 136,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "bug-severity#1"
+      ],
+      "usage": {
+        "input_tokens": 328,
+        "output_tokens": 38
+      },
+      "generation_latency_seconds": 1.808,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer directly matches the passage which states P1 bugs must be fixed within 4 hours.",
+      "judge_usage": {
+        "input_tokens": 390,
+        "output_tokens": 35
+      }
+    },
+    {
+      "id": "Q02",
+      "question": "What mix of unit, integration and end-to-end tests does the team aim for?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "test-strategy",
+      "key_facts": [
+        [
+          "70"
+        ],
+        [
+          "20"
+        ],
+        [
+          "10"
+        ]
+      ],
+      "answer": "The team aims for roughly 70% unit tests, 20% integration tests, and 10% end-to-end tests. Unit tests are cheap and fast so most coverage lives there, while end-to-end tests are kept minimal as they are slow and brittle, reserved for critical user journeys only.",
+      "retrieved": [
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 15.558
+        },
+        {
+          "chunk_id": "ci-pipeline#1",
+          "doc_id": "ci-pipeline",
+          "score": 12.483
+        },
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 10.137
+        }
+      ],
+      "retrieval_ms": 0.3209999995306134,
+      "context_words": 125,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "test-strategy#1"
+      ],
+      "usage": {
+        "input_tokens": 332,
+        "output_tokens": 90
+      },
+      "generation_latency_seconds": 1.947,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "Every claim in the answer is directly supported by the test-strategy#1 passage, including the 70/20/10 split and the reasoning about unit tests being cheap/fast and end-to-end tests being slow/brittle and reserved for critical user journeys.",
+      "judge_usage": {
+        "input_tokens": 446,
+        "output_tokens": 72
+      }
+    },
+    {
+      "id": "Q03",
+      "question": "When does a flaky test get quarantined?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "flaky-tests",
+      "key_facts": [
+        [
+          "3 ",
+          "three"
+        ],
+        [
+          "10 runs",
+          "ten runs",
+          "last 10",
+          "last ten"
+        ]
+      ],
+      "answer": "A test is quarantined after 3 flaky failures within its last 10 runs.",
+      "retrieved": [
+        {
+          "chunk_id": "flaky-tests#2",
+          "doc_id": "flaky-tests",
+          "score": 6.235
+        },
+        {
+          "chunk_id": "flaky-tests#3",
+          "doc_id": "flaky-tests",
+          "score": 4.762
+        },
+        {
+          "chunk_id": "flaky-tests#1",
+          "doc_id": "flaky-tests",
+          "score": 3.411
+        }
+      ],
+      "retrieval_ms": 0.25883299531415105,
+      "context_words": 124,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "flaky-tests#2"
+      ],
+      "usage": {
+        "input_tokens": 318,
+        "output_tokens": 46
+      },
+      "generation_latency_seconds": 1.378,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer exactly matches the quarantine rule stated in passage flaky-tests#2.",
+      "judge_usage": {
+        "input_tokens": 387,
+        "output_tokens": 32
+      }
+    },
+    {
+      "id": "Q04",
+      "question": "How many times may CI automatically retry a failed test?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "flaky-tests",
+      "key_facts": [
+        [
+          "2",
+          "two"
+        ]
+      ],
+      "answer": "The CI pipeline may automatically retry a failed test at most 2 times. More retries are not allowed because they mask instability.",
+      "retrieved": [
+        {
+          "chunk_id": "flaky-tests#3",
+          "doc_id": "flaky-tests",
+          "score": 17.907
+        },
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 3.674
+        },
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 2.671
+        }
+      ],
+      "retrieval_ms": 0.15341599646490067,
+      "context_words": 116,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "flaky-tests#3"
+      ],
+      "usage": {
+        "input_tokens": 301,
+        "output_tokens": 53
+      },
+      "generation_latency_seconds": 1.741,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "Both claims in the answer—that the CI pipeline may retry at most 2 times and that more retries are disallowed because they mask instability—are directly supported by the flaky-tests#3 passage.",
+      "judge_usage": {
+        "input_tokens": 377,
+        "output_tokens": 61
+      }
+    },
+    {
+      "id": "Q05",
+      "question": "What time does the nightly end-to-end suite run?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "ci-pipeline",
+      "key_facts": [
+        [
+          "2 am",
+          "2 a.m.",
+          "2:00"
+        ]
+      ],
+      "answer": "The full end-to-end suite runs nightly at 2 AM Eastern.",
+      "retrieved": [
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 14.223
+        },
+        {
+          "chunk_id": "ci-pipeline#1",
+          "doc_id": "ci-pipeline",
+          "score": 8.478
+        },
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 7.556
+        }
+      ],
+      "retrieval_ms": 0.25333400117233396,
+      "context_words": 125,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "ci-pipeline#2"
+      ],
+      "usage": {
+        "input_tokens": 327,
+        "output_tokens": 42
+      },
+      "generation_latency_seconds": 2.005,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer exactly matches the information in passage ci-pipeline#2, which states the full end-to-end suite runs nightly at 2 AM Eastern.",
+      "judge_usage": {
+        "input_tokens": 393,
+        "output_tokens": 48
+      }
+    },
+    {
+      "id": "Q06",
+      "question": "What is the maximum duration allowed for the unit test stage?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "ci-pipeline",
+      "key_facts": [
+        [
+          "10 minutes",
+          "ten minutes"
+        ]
+      ],
+      "answer": "The unit test stage must finish in under 10 minutes. If it grows beyond that, the team splits or parallelises the suite.",
+      "retrieved": [
+        {
+          "chunk_id": "ci-pipeline#1",
+          "doc_id": "ci-pipeline",
+          "score": 7.353
+        },
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 4.58
+        },
+        {
+          "chunk_id": "flaky-tests#3",
+          "doc_id": "flaky-tests",
+          "score": 3.647
+        }
+      ],
+      "retrieval_ms": 0.36750000435858965,
+      "context_words": 112,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "ci-pipeline#2"
+      ],
+      "usage": {
+        "input_tokens": 302,
+        "output_tokens": 53
+      },
+      "generation_latency_seconds": 1.538,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "Both claims in the answer (10-minute limit and the team splitting or parallelising the suite if exceeded) are directly supported by passage ci-pipeline#2.",
+      "judge_usage": {
+        "input_tokens": 379,
+        "output_tokens": 48
+      }
+    },
+    {
+      "id": "Q07",
+      "question": "Which tool does the team use for load testing?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "performance-testing",
+      "key_facts": [
+        [
+          "k6"
+        ]
+      ],
+      "answer": "The team uses k6 for load testing.",
+      "retrieved": [
+        {
+          "chunk_id": "performance-testing#1",
+          "doc_id": "performance-testing",
+          "score": 8.407
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.138
+        },
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 3.736
+        }
+      ],
+      "retrieval_ms": 0.22929201077204198,
+      "context_words": 116,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "performance-testing#1"
+      ],
+      "usage": {
+        "input_tokens": 288,
+        "output_tokens": 34
+      },
+      "generation_latency_seconds": 1.227,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer directly matches the passage stating 'Load tests are written in k6.'",
+      "judge_usage": {
+        "input_tokens": 346,
+        "output_tokens": 31
+      }
+    },
+    {
+      "id": "Q08",
+      "question": "What p95 latency must the API stay under with 500 concurrent users?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "performance-testing",
+      "key_facts": [
+        [
+          "300"
+        ]
+      ],
+      "answer": "Under a load of 500 concurrent users, the p95 API latency must stay below 300 ms.",
+      "retrieved": [
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 21.689
+        },
+        {
+          "chunk_id": "code-review-qa#2",
+          "doc_id": "code-review-qa",
+          "score": 4.822
+        },
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 3.362
+        }
+      ],
+      "retrieval_ms": 0.3035830013686791,
+      "context_words": 118,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "performance-testing#2"
+      ],
+      "usage": {
+        "input_tokens": 311,
+        "output_tokens": 49
+      },
+      "generation_latency_seconds": 1.533,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer directly matches the passage which states 'Under a load of 500 concurrent users, the p95 API latency must stay below 300 ms.'",
+      "judge_usage": {
+        "input_tokens": 384,
+        "output_tokens": 49
+      }
+    },
+    {
+      "id": "Q09",
+      "question": "How often does Northwind ship a release?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "second tuesday",
+          "every other tuesday",
+          "every two weeks",
+          "biweekly"
+        ]
+      ],
+      "answer": "Northwind ships a release every second Tuesday.",
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 7.716
+        },
+        {
+          "chunk_id": "release-process#2",
+          "doc_id": "release-process",
+          "score": 2.552
+        },
+        {
+          "chunk_id": "test-strategy#3",
+          "doc_id": "test-strategy",
+          "score": 2.552
+        }
+      ],
+      "retrieval_ms": 0.14779099728912115,
+      "context_words": 109,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "release-process#1"
+      ],
+      "usage": {
+        "input_tokens": 280,
+        "output_tokens": 34
+      },
+      "generation_latency_seconds": 1.23,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer exactly matches the information stated in passage [release-process#1] that 'Northwind ships a release every second Tuesday.'",
+      "judge_usage": {
+        "input_tokens": 338,
+        "output_tokens": 43
+      }
+    },
+    {
+      "id": "Q10",
+      "question": "When does code freeze start before a release?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "monday"
+        ],
+        [
+          "5 pm",
+          "5:00 pm",
+          "5 p.m.",
+          "17:00"
+        ]
+      ],
+      "answer": "Code freeze starts the Monday before the release at 5 PM Eastern.",
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 12.612
+        },
+        {
+          "chunk_id": "test-strategy#3",
+          "doc_id": "test-strategy",
+          "score": 4.416
+        },
+        {
+          "chunk_id": "release-process#2",
+          "doc_id": "release-process",
+          "score": 4.245
+        }
+      ],
+      "retrieval_ms": 0.24270899302791804,
+      "context_words": 109,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "release-process#1"
+      ],
+      "usage": {
+        "input_tokens": 279,
+        "output_tokens": 39
+      },
+      "generation_latency_seconds": 1.435,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer is directly and fully supported by the passage, which states 'Code freeze starts the Monday before at 5 PM Eastern.'",
+      "judge_usage": {
+        "input_tokens": 342,
+        "output_tokens": 42
+      }
+    },
+    {
+      "id": "Q11",
+      "question": "How many tests are in the regression suite?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "240"
+        ]
+      ],
+      "answer": "The regression suite contains 240 tests.",
+      "retrieved": [
+        {
+          "chunk_id": "release-process#2",
+          "doc_id": "release-process",
+          "score": 5.862
+        },
+        {
+          "chunk_id": "metrics#2",
+          "doc_id": "metrics",
+          "score": 5.178
+        },
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 2.556
+        }
+      ],
+      "retrieval_ms": 0.25924999499693513,
+      "context_words": 106,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "release-process#2"
+      ],
+      "usage": {
+        "input_tokens": 289,
+        "output_tokens": 33
+      },
+      "generation_latency_seconds": 1.216,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer directly matches the passage which states 'The regression suite contains 240 tests.'",
+      "judge_usage": {
+        "input_tokens": 346,
+        "output_tokens": 33
+      }
+    },
+    {
+      "id": "Q12",
+      "question": "How long does the on-call engineer have to acknowledge a page?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "oncall",
+      "key_facts": [
+        [
+          "15 minutes",
+          "fifteen minutes"
+        ]
+      ],
+      "answer": "The on-call engineer must acknowledge a page within 15 minutes.",
+      "retrieved": [
+        {
+          "chunk_id": "oncall#2",
+          "doc_id": "oncall",
+          "score": 5.432
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 3.774
+        },
+        {
+          "chunk_id": "oncall#1",
+          "doc_id": "oncall",
+          "score": 3.599
+        }
+      ],
+      "retrieval_ms": 0.23379200138151646,
+      "context_words": 115,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "oncall#2"
+      ],
+      "usage": {
+        "input_tokens": 294,
+        "output_tokens": 38
+      },
+      "generation_latency_seconds": 1.316,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer directly reflects the passage [oncall#2] which states 'A page must be acknowledged within 15 minutes.'",
+      "judge_usage": {
+        "input_tokens": 357,
+        "output_tokens": 41
+      }
+    },
+    {
+      "id": "Q13",
+      "question": "What colour contrast ratio does the accessibility standard require for text?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "accessibility",
+      "key_facts": [
+        [
+          "4.5"
+        ]
+      ],
+      "answer": "The accessibility standard requires text to have a colour contrast ratio of at least 4.5:1 against its background.",
+      "retrieved": [
+        {
+          "chunk_id": "accessibility#1",
+          "doc_id": "accessibility",
+          "score": 19.125
+        },
+        {
+          "chunk_id": "accessibility#2",
+          "doc_id": "accessibility",
+          "score": 2.813
+        },
+        {
+          "chunk_id": "automation-standards#3",
+          "doc_id": "automation-standards",
+          "score": 2.26
+        }
+      ],
+      "retrieval_ms": 0.17454200133215636,
+      "context_words": 84,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "accessibility#1"
+      ],
+      "usage": {
+        "input_tokens": 261,
+        "output_tokens": 47
+      },
+      "generation_latency_seconds": 1.435,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer directly and accurately reflects the passage [accessibility#1], which states text must have a colour contrast ratio of at least 4.5:1 against its background.",
+      "judge_usage": {
+        "input_tokens": 334,
+        "output_tokens": 50
+      }
+    },
+    {
+      "id": "Q14",
+      "question": "Which screen readers are used for manual accessibility testing?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "accessibility",
+      "key_facts": [
+        [
+          "voiceover"
+        ],
+        [
+          "nvda"
+        ]
+      ],
+      "answer": "VoiceOver and NVDA are used for manual screen reader testing, conducted by a QA engineer before every major release.",
+      "retrieved": [
+        {
+          "chunk_id": "accessibility#2",
+          "doc_id": "accessibility",
+          "score": 14.687
+        },
+        {
+          "chunk_id": "accessibility#1",
+          "doc_id": "accessibility",
+          "score": 4.765
+        },
+        {
+          "chunk_id": "security-testing#2",
+          "doc_id": "security-testing",
+          "score": 2.432
+        }
+      ],
+      "retrieval_ms": 0.21300000662449747,
+      "context_words": 90,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "accessibility#2"
+      ],
+      "usage": {
+        "input_tokens": 271,
+        "output_tokens": 49
+      },
+      "generation_latency_seconds": 2.244,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer correctly states that VoiceOver and NVDA are used for manual screen reader testing by a QA engineer before every major release, all of which is directly supported by the passage.",
+      "judge_usage": {
+        "input_tokens": 346,
+        "output_tokens": 54
+      }
+    },
+    {
+      "id": "Q15",
+      "question": "What is the target for defect escape rate?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "metrics",
+      "key_facts": [
+        [
+          "5%",
+          "5 percent",
+          "under 5",
+          "below 5"
+        ]
+      ],
+      "answer": "The target for defect escape rate is under 5%.",
+      "retrieved": [
+        {
+          "chunk_id": "metrics#2",
+          "doc_id": "metrics",
+          "score": 13.309
+        },
+        {
+          "chunk_id": "metrics#1",
+          "doc_id": "metrics",
+          "score": 8.688
+        },
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 3.984
+        }
+      ],
+      "retrieval_ms": 0.1956670021172613,
+      "context_words": 108,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "metrics#2"
+      ],
+      "usage": {
+        "input_tokens": 290,
+        "output_tokens": 35
+      },
+      "generation_latency_seconds": 1.314,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer directly matches the information in [metrics#2], which states the defect escape rate target is under 5%.",
+      "judge_usage": {
+        "input_tokens": 350,
+        "output_tokens": 39
+      }
+    },
+    {
+      "id": "Q16",
+      "question": "What prefix do test accounts use?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "test-data",
+      "key_facts": [
+        [
+          "qa_"
+        ]
+      ],
+      "answer": "Test accounts use the prefix `qa_` so that they are easy to find and clean up.",
+      "retrieved": [
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 11.182
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.824
+        },
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 0.737
+        }
+      ],
+      "retrieval_ms": 0.23720800527371466,
+      "context_words": 126,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "test-data#2"
+      ],
+      "usage": {
+        "input_tokens": 305,
+        "output_tokens": 44
+      },
+      "generation_latency_seconds": 1.43,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer directly matches the passage, which states that test accounts use the prefix qa_ so that they are easy to find and clean up.",
+      "judge_usage": {
+        "input_tokens": 373,
+        "output_tokens": 42
+      }
+    },
+    {
+      "id": "Q17",
+      "question": "How soon must critical security findings be fixed?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "security-testing",
+      "key_facts": [
+        [
+          "7 days",
+          "seven days"
+        ]
+      ],
+      "answer": "Critical findings from the annual penetration test must be fixed within 7 days.",
+      "retrieved": [
+        {
+          "chunk_id": "security-testing#2",
+          "doc_id": "security-testing",
+          "score": 13.811
+        },
+        {
+          "chunk_id": "bug-severity#1",
+          "doc_id": "bug-severity",
+          "score": 3.567
+        },
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 3.362
+        }
+      ],
+      "retrieval_ms": 0.22954201267566532,
+      "context_words": 131,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "security-testing#2"
+      ],
+      "usage": {
+        "input_tokens": 323,
+        "output_tokens": 41
+      },
+      "generation_latency_seconds": 1.415,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer is fully supported by passage [security-testing#2], which states that critical findings must be fixed within 7 days and that an external vendor performs a penetration test once a year.",
+      "judge_usage": {
+        "input_tokens": 388,
+        "output_tokens": 55
+      }
+    },
+    {
+      "id": "Q18",
+      "question": "How big should a pull request be at most?",
+      "style": "direct",
+      "answerable": true,
+      "gold_doc": "code-review-qa",
+      "key_facts": [
+        [
+          "400"
+        ]
+      ],
+      "answer": "Pull requests should stay under 400 changed lines where possible, because larger ones are reviewed less carefully.",
+      "retrieved": [
+        {
+          "chunk_id": "code-review-qa#1",
+          "doc_id": "code-review-qa",
+          "score": 7.748
+        },
+        {
+          "chunk_id": "code-review-qa#2",
+          "doc_id": "code-review-qa",
+          "score": 4.733
+        },
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 4.502
+        }
+      ],
+      "retrieval_ms": 0.1798330049496144,
+      "context_words": 104,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "code-review-qa#2"
+      ],
+      "usage": {
+        "input_tokens": 281,
+        "output_tokens": 47
+      },
+      "generation_latency_seconds": 1.564,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "The answer directly quotes the relevant passage [code-review-qa#2] without adding any unsupported claims.",
+      "judge_usage": {
+        "input_tokens": 350,
+        "output_tokens": 38
+      }
+    },
+    {
+      "id": "P01",
+      "question": "If I am the one carrying the pager this week, how soon do I have to respond?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "oncall",
+      "key_facts": [
+        [
+          "15 minutes",
+          "fifteen minutes"
+        ]
+      ],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "oncall#1",
+          "doc_id": "oncall",
+          "score": 10.078
+        },
+        {
+          "chunk_id": "onboarding#1",
+          "doc_id": "onboarding",
+          "score": 5.129
+        },
+        {
+          "chunk_id": "code-review-qa#2",
+          "doc_id": "code-review-qa",
+          "score": 5.084
+        }
+      ],
+      "retrieval_ms": 0.2816659980453551,
+      "context_words": 110,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 303,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 1.435,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The passages do not specify a response time for the on-call primary engineer, and an answer acknowledging this absence of information would be fully supported.",
+      "judge_usage": {
+        "input_tokens": 352,
+        "output_tokens": 44
+      }
+    },
+    {
+      "id": "P02",
+      "question": "What is the cut-off for getting code merged ahead of a launch?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "monday"
+        ],
+        [
+          "5 pm",
+          "5:00 pm",
+          "5 p.m.",
+          "17:00"
+        ]
+      ],
+      "answer": "Code freeze starts the Monday before the release (every second Tuesday) at 5 PM Eastern. After that point, only fixes approved by the QA lead may be merged.",
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 4.536
+        },
+        {
+          "chunk_id": "release-process#2",
+          "doc_id": "release-process",
+          "score": 4.533
+        },
+        {
+          "chunk_id": "ci-pipeline#3",
+          "doc_id": "ci-pipeline",
+          "score": 2.813
+        }
+      ],
+      "retrieval_ms": 0.14066700532566756,
+      "context_words": 98,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "release-process#1"
+      ],
+      "usage": {
+        "input_tokens": 277,
+        "output_tokens": 60
+      },
+      "generation_latency_seconds": 1.807,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "Every claim in the answer is directly supported by the passages: the release schedule (every second Tuesday), the code freeze timing (Monday before at 5 PM Eastern), and the post-freeze merge restriction (only QA lead-approved fixes) all come from release-process#1.",
+      "judge_usage": {
+        "input_tokens": 361,
+        "output_tokens": 73
+      }
+    },
+    {
+      "id": "P03",
+      "question": "What happens to a test that sometimes passes and sometimes fails for no clear reason?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "flaky-tests",
+      "key_facts": [
+        [
+          "quarantine"
+        ]
+      ],
+      "answer": "A test that fails and then passes on a rerun with no code change is classified as a **flaky test**, which is treated as a defect in the test suite. This is because flaky tests hide real failures and waste engineering time.",
+      "retrieved": [
+        {
+          "chunk_id": "flaky-tests#1",
+          "doc_id": "flaky-tests",
+          "score": 8.594
+        },
+        {
+          "chunk_id": "test-strategy#3",
+          "doc_id": "test-strategy",
+          "score": 2.863
+        },
+        {
+          "chunk_id": "ci-pipeline#3",
+          "doc_id": "ci-pipeline",
+          "score": 2.813
+        }
+      ],
+      "retrieval_ms": 0.3256250056438148,
+      "context_words": 114,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "flaky-tests#1"
+      ],
+      "usage": {
+        "input_tokens": 293,
+        "output_tokens": 75
+      },
+      "generation_latency_seconds": 2.047,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "Every claim in the answer is directly supported by passage [flaky-tests#1], which defines flaky tests as those that fail and pass on rerun with no code change and states they are treated as defects because they hide real failures and waste engineering time.",
+      "judge_usage": {
+        "input_tokens": 391,
+        "output_tokens": 68
+      }
+    },
+    {
+      "id": "P04",
+      "question": "Who has to give the go-ahead before we ship?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "qa lead"
+        ],
+        [
+          "product owner"
+        ]
+      ],
+      "answer": "The QA lead must approve any fixes before they can be merged after the code freeze, implying they have the authority to give the go-ahead before shipping.",
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 4.887
+        },
+        {
+          "chunk_id": "performance-testing#1",
+          "doc_id": "performance-testing",
+          "score": 1.883
+        },
+        {
+          "chunk_id": "accessibility#2",
+          "doc_id": "accessibility",
+          "score": 1.783
+        }
+      ],
+      "retrieval_ms": 0.2246249932795763,
+      "context_words": 95,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "release-process#1"
+      ],
+      "usage": {
+        "input_tokens": 266,
+        "output_tokens": 57
+      },
+      "generation_latency_seconds": 2.458,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": false,
+      "judge_score": 3,
+      "judge_reason": "The answer correctly states that the QA lead approves fixes after code freeze, but adds the unsupported inference that this means they 'give the go-ahead before shipping' — the passages don't explicitly say the QA lead approves the overall release shipment.",
+      "judge_usage": {
+        "input_tokens": 347,
+        "output_tokens": 70
+      }
+    },
+    {
+      "id": "P05",
+      "question": "Are we allowed to use real customer records in the testing environment?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "test-data",
+      "key_facts": [
+        [
+          "never",
+          "must not",
+          "not allowed",
+          "may not",
+          "cannot",
+          "no"
+        ]
+      ],
+      "answer": "The passages do not explicitly say real customer records are forbidden, but test accounts use the prefix `qa_` so they are easy to find and clean up, implying test environments use dedicated test accounts rather than real customer records.",
+      "retrieved": [
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 4.822
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.138
+        },
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 3.221
+        }
+      ],
+      "retrieval_ms": 0.26879199140239507,
+      "context_words": 125,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "test-data#2"
+      ],
+      "usage": {
+        "input_tokens": 301,
+        "output_tokens": 70
+      },
+      "generation_latency_seconds": 2.558,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 4,
+      "judge_reason": "The answer accurately states that test accounts use the qa_ prefix for easy identification and cleanup, and the inference that dedicated test accounts are used rather than real customer records is a reasonable and faithful interpretation of the passage, with no unsupported claims.",
+      "judge_usage": {
+        "input_tokens": 395,
+        "output_tokens": 63
+      }
+    },
+    {
+      "id": "P06",
+      "question": "How many days do we have to fix a severe vulnerability?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "security-testing",
+      "key_facts": [
+        [
+          "7 days",
+          "seven days"
+        ]
+      ],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 3.09
+        },
+        {
+          "chunk_id": "onboarding#2",
+          "doc_id": "onboarding",
+          "score": 2.528
+        },
+        {
+          "chunk_id": "onboarding#1",
+          "doc_id": "onboarding",
+          "score": 2.396
+        }
+      ],
+      "retrieval_ms": 0.23066700669005513,
+      "context_words": 119,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 313,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 1.123,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The assistant's answer correctly identifies that the passages do not contain information about a timeframe for fixing severe vulnerabilities.",
+      "judge_usage": {
+        "input_tokens": 362,
+        "output_tokens": 37
+      }
+    },
+    {
+      "id": "P07",
+      "question": "What do we use to automate tests in the browser?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "automation-standards",
+      "key_facts": [
+        [
+          "playwright"
+        ]
+      ],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.824
+        },
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 3.346
+        },
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 0.737
+        }
+      ],
+      "retrieval_ms": 0.24783299886621535,
+      "context_words": 126,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 310,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 1.124,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The passages do not contain information about what specific tool is used to automate tests in the browser, and an answer stating this would be fully faithful to the passages.",
+      "judge_usage": {
+        "input_tokens": 359,
+        "output_tokens": 47
+      }
+    },
+    {
+      "id": "P08",
+      "question": "If something serious breaks right after launch, how long do we have to decide whether to undo it?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "release-process",
+      "key_facts": [
+        [
+          "30 minutes",
+          "thirty minutes"
+        ]
+      ],
+      "answer": "The team has 30 minutes to decide whether to roll back after a P1 bug appears following a release. The on-call engineer makes the call together with the QA lead.",
+      "retrieved": [
+        {
+          "chunk_id": "release-process#3",
+          "doc_id": "release-process",
+          "score": 10.707
+        },
+        {
+          "chunk_id": "performance-testing#1",
+          "doc_id": "performance-testing",
+          "score": 2.302
+        },
+        {
+          "chunk_id": "ci-pipeline#3",
+          "doc_id": "ci-pipeline",
+          "score": 2.18
+        }
+      ],
+      "retrieval_ms": 0.30300000798888505,
+      "context_words": 91,
+      "full_context_words": 1239,
+      "answered": true,
+      "parse_error": false,
+      "sources": [
+        "release-process#3"
+      ],
+      "usage": {
+        "input_tokens": 274,
+        "output_tokens": 63
+      },
+      "generation_latency_seconds": 2.048,
+      "citations_valid": true,
+      "cites_gold_doc": true,
+      "correct": true,
+      "judge_score": 5,
+      "judge_reason": "Every claim in the answer is directly supported by the release-process#3 passage, which states the team must decide within 30 minutes whether to roll back after a P1 bug, with the on-call engineer and QA lead making the call together.",
+      "judge_usage": {
+        "input_tokens": 361,
+        "output_tokens": 69
+      }
+    },
+    {
+      "id": "P09",
+      "question": "Which guideline do we follow so that people with disabilities can use the product?",
+      "style": "paraphrased",
+      "answerable": true,
+      "gold_doc": "accessibility",
+      "key_facts": [
+        [
+          "wcag"
+        ]
+      ],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 4.822
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 4.138
+        },
+        {
+          "chunk_id": "automation-standards#2",
+          "doc_id": "automation-standards",
+          "score": 3.194
+        }
+      ],
+      "retrieval_ms": 0.2537499967729673,
+      "context_words": 107,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 290,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 1.125,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The assistant's answer correctly identifies that the passages do not contain any information about accessibility guidelines for people with disabilities, which is accurate given the provided passages only cover test data management and test automation standards.",
+      "judge_usage": {
+        "input_tokens": 339,
+        "output_tokens": 53
+      }
+    },
+    {
+      "id": "U01",
+      "question": "What is the salary range for a QA engineer at Northwind?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "release-process#1",
+          "doc_id": "release-process",
+          "score": 3.131
+        },
+        {
+          "chunk_id": "onboarding#1",
+          "doc_id": "onboarding",
+          "score": 2.762
+        },
+        {
+          "chunk_id": "accessibility#1",
+          "doc_id": "accessibility",
+          "score": 2.54
+        }
+      ],
+      "retrieval_ms": 0.22041700140107423,
+      "context_words": 102,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 290,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 2.356,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The assistant's answer (empty/no claims made) correctly reflects that the passages contain no information about QA engineer salary ranges at Northwind.",
+      "judge_usage": {
+        "input_tokens": 339,
+        "output_tokens": 44
+      }
+    },
+    {
+      "id": "U02",
+      "question": "Which cloud provider hosts the staging environment?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "performance-testing#2",
+          "doc_id": "performance-testing",
+          "score": 4.059
+        },
+        {
+          "chunk_id": "ci-pipeline#1",
+          "doc_id": "ci-pipeline",
+          "score": 2.813
+        },
+        {
+          "chunk_id": "test-data#2",
+          "doc_id": "test-data",
+          "score": 2.105
+        }
+      ],
+      "retrieval_ms": 0.21554200793616474,
+      "context_words": 115,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 292,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 1.282,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The assistant's answer (which appears to be empty/blank) correctly reflects that the passages do not contain information about which cloud provider hosts the staging environment.",
+      "judge_usage": {
+        "input_tokens": 341,
+        "output_tokens": 45
+      }
+    },
+    {
+      "id": "U03",
+      "question": "What is the company's remote work policy?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "ci-pipeline#3",
+          "doc_id": "ci-pipeline",
+          "score": 3.364
+        },
+        {
+          "chunk_id": "flaky-tests#1",
+          "doc_id": "flaky-tests",
+          "score": 2.251
+        },
+        {
+          "chunk_id": "flaky-tests#3",
+          "doc_id": "flaky-tests",
+          "score": 2.215
+        }
+      ],
+      "retrieval_ms": 0.23175000387709588,
+      "context_words": 109,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 289,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 1.228,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The assistant's answer (empty/blank) correctly reflects that the provided passages contain no information about a remote work policy, only covering CI pipeline and flaky test policies.",
+      "judge_usage": {
+        "input_tokens": 338,
+        "output_tokens": 48
+      }
+    },
+    {
+      "id": "U04",
+      "question": "Does the team run tests on a Selenium Grid?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "ci-pipeline#2",
+          "doc_id": "ci-pipeline",
+          "score": 3.574
+        },
+        {
+          "chunk_id": "security-testing#1",
+          "doc_id": "security-testing",
+          "score": 3.499
+        },
+        {
+          "chunk_id": "metrics#1",
+          "doc_id": "metrics",
+          "score": 2.578
+        }
+      ],
+      "retrieval_ms": 0.283041998045519,
+      "context_words": 114,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 296,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 1.126,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The assistant's answer correctly identifies that the passages do not contain any information about Selenium Grid, which is accurate since none of the provided passages mention Selenium Grid or the infrastructure used for test execution.",
+      "judge_usage": {
+        "input_tokens": 345,
+        "output_tokens": 54
+      }
+    },
+    {
+      "id": "U05",
+      "question": "How many QA engineers are on the team?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "release-process#3",
+          "doc_id": "release-process",
+          "score": 4.25
+        },
+        {
+          "chunk_id": "metrics#1",
+          "doc_id": "metrics",
+          "score": 3.363
+        },
+        {
+          "chunk_id": "onboarding#1",
+          "doc_id": "onboarding",
+          "score": 2.762
+        }
+      ],
+      "retrieval_ms": 0.25558299967087805,
+      "context_words": 108,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 288,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 1.228,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The assistant's answer (empty/no claims made) correctly reflects that the passages do not contain information about the number of QA engineers on the team.",
+      "judge_usage": {
+        "input_tokens": 337,
+        "output_tokens": 45
+      }
+    },
+    {
+      "id": "U06",
+      "question": "What is the budget for the annual penetration test?",
+      "style": "direct",
+      "answerable": false,
+      "gold_doc": null,
+      "key_facts": [],
+      "answer": "",
+      "retrieved": [
+        {
+          "chunk_id": "security-testing#2",
+          "doc_id": "security-testing",
+          "score": 3.633
+        },
+        {
+          "chunk_id": "test-strategy#1",
+          "doc_id": "test-strategy",
+          "score": 0.737
+        },
+        {
+          "chunk_id": "automation-standards#1",
+          "doc_id": "automation-standards",
+          "score": 0.686
+        }
+      ],
+      "retrieval_ms": 0.24854201183188707,
+      "context_words": 122,
+      "full_context_words": 1239,
+      "answered": false,
+      "parse_error": false,
+      "sources": [],
+      "usage": {
+        "input_tokens": 309,
+        "output_tokens": 18
+      },
+      "generation_latency_seconds": 1.142,
+      "citations_valid": false,
+      "cites_gold_doc": false,
+      "correct": false,
+      "judge_score": 5,
+      "judge_reason": "The assistant's answer (empty/no claims made) correctly reflects that the passages contain no information about the budget for the annual penetration test.",
+      "judge_usage": {
+        "input_tokens": 358,
+        "output_tokens": 43
+      }
+    }
+  ]
+}
